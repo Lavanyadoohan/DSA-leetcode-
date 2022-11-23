@@ -35,3 +35,20 @@ public:
         return count;
     }
 };
+
+Brute Force
+
+lets take a number in Binary : 1001 now just see that if it has last bit (least magnificient bit) is one or not if it is increase the count and rightshift our number and repeat same.
+
+class Solution {
+public:
+    int hammingWeight(uint32_t n) {
+        int ans = 0;
+        while(n > 0)
+        {
+            if(n%2==1)ans++;
+            n /= 2;
+        }
+        return ans;
+    }
+};
