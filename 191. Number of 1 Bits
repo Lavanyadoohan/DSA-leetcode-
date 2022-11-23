@@ -1,0 +1,37 @@
+191. Number of 1 Bits
+Write a function that takes an unsigned integer and returns the number of '1' bits it has (also known as the Hamming weight).
+
+/*class Solution {
+public:
+    int hammingWeight(uint32_t n) {
+        int sum = 0;
+        while(n>0)
+        {
+            int digit = n%10;
+            if(digit&1)
+            //if(digit==1)
+            {
+                sum =sum++;
+            }
+            n=n/10;
+        }
+    
+    return sum;   
+    }
+};*/
+// we can not use this as it is not a decimal number on binary numbers only operations like right and left shift can be done 
+class Solution {
+public:
+    int hammingWeight(uint32_t n) {
+        int count = 0;
+        while(n!=0)
+        {
+            if(n&1)
+            {
+                count++;
+            }
+            n=n>>1;
+        }
+        return count;
+    }
+};
